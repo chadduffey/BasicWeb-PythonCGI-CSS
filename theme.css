@@ -1,0 +1,91 @@
+body {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	background: gray;
+	margin: 0;
+	text-align: center
+  }
+  
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+#logo {
+	text-align: center;
+}
+
+#boximages{
+	text-align: center;
+ 	margin: auto;
+ 	padding: 0;
+ 	border-width: 1px 1px 1px 1px;
+ 	border-color: black;
+ 	border-style: solid
+}
+
+#whole_page {
+ 	width: 50em;
+ 	margin: auto;
+ 	padding: 0;
+ 	text-align: left;
+ 	border-width: 0 1px 1px 1px;
+ 	border-color: black;
+ 	border-style: solid
+}
+ 
+#header {
+ 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+ 	color: white;
+ 	background: #282828;
+ 	font-size: 32pt;
+ 	padding: 0.25em;
+ 	margin-bottom: 0;
+ 	text-align: center
+ }
+ 
+#nav {
+	color: #282828;
+	font-size: 12pt;
+	background: #ccc;
+	padding: 1em;
+	text-align: center;
+}
+
+#nav a {
+	text-decoration: none;
+}
+
+#nav a:hover {
+	color: blue;
+}
+
+#content {
+	height: 100%;
+	background: white;
+	padding: 1em;
+	color: black
+}
+
+table, td, th {
+	text-align: center;
+	border:1px solid black;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+th {
+	background-color:gray;
+	color:white;
+}
+
+p {
+	text-align: center;
+}
+
+

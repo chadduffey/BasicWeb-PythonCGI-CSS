@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="theme.css" />
+        <meta http-equiv="Content-Script-Type" content="text/tcl"/>
+		<script type="text/javascript" src="products.js"></script>
+        <title>Nuts 'R' Us</title>
+    </head>
+    
+    <body onload="init()">
+    	<div id="whole_page">
+    		<div id="header">Nuts 'R' Us</div>
+        	<div id="nav">
+        		<a href="index.html">		Home | </a>
+        		<a href="products.html">	Our Products | </a>
+        		<a href="http://csusap.csu.edu.au/cgi-pub/cduffe02/cart.cgi">Shopping Cart </a>
+          	</div>
+        	<div id="content">
+        		<div id="logo">
+        			<img src="img/logo.png" alt="mainLogo" width="142" height="142" />
+        		</div>
+        		<h1>Products Page</h1>
+        		<h2>What can we do for you today?</h2>
+        		<br/>
+        		<br/>
+        		<form action = "/cgi-pub/cduffe02/cart.cgi" method="post" name="products">
+        		<table class="center" summary="ItemsForSale">
+	        		<tr>
+	        			<th>Item</th>
+	        			<th>Product Code</th>
+	        			<th>Diameter</th>
+	        			<th>Length</th>
+	        			<th>Colour</th>
+	        			<th>Unit Price</th>
+	        			<th>Quantity</th>
+	        			<th>Sub Total</th>
+	        		</tr>
+	        		<tr>
+	        			<th><label for="bolts">Bolt</label></th>
+	        			<td><label for="b113">B113</label></td>
+	        			<td>9</td>
+	        			<td>50</td>
+	        			<td>Black</td>
+	        			<td>2.15</td>
+	        			<td><input type = "text" id ="bolts" name="bolts" size="2" onblur="calcTotal()"/></td>
+	        			<td><input type = "text" id ="b113" size="4" disabled="disabled"/>	</td>
+	        		</tr>
+	 				<tr>
+	 					<th><label for="nuts">Nut</label></th>
+	 					<td><label for="n234">N234</label></td>
+	 					<td>5</td>
+	 					<td>N\A</td>
+	 					<td>Silver</td>
+	 					<td>0.45</td>
+	 					<td><input type = "text" id ="nuts" name="nuts" size="2" onblur="calcTotal()"/></td>
+	 					<td><input type = "text" id ="n234" size="4" disabled="disabled"/></td>
+	 				</tr>
+	 				<tr>
+	 					<th><label for="washers">Washer</label></th>
+	 					<td><label for="w359">W359</label></td>
+	 					<td>8</td>
+	 					<td>N/A</td>
+	 					<td>Silver</td>
+	 					<td>0.30</td>
+	 					<td><input type = "text" id ="washers" name="washers" size="2" onblur="calcTotal()"/></td>
+	 					<td><input type = "text" id ="w359" size="4" disabled="disabled"/></td>
+	 				</tr>
+	 				<tr>
+	 					<th></th>
+	 					<th></th>
+	 					<th></th>
+	 					<th></th>
+	 					<th></th>
+	 					<th></th>
+	 					<th><label for="total">Total</label></th>
+	 					<td><input type = "text" id ="total" size="4" disabled="disabled"/></td>
+	 				</tr>
+ 				</table>
+ 				<p>
+ 					<input type = "submit" value = "Submit Order"/>
+ 					<input type = "reset" value = "Clear Order Form"/>
+ 				</p>
+ 				</form>
+ 				<br />
+ 				<br />
+         	</div>
+    	</div>
+    </body>
+    
+</html>

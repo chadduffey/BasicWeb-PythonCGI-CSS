@@ -1,0 +1,7 @@
+Uni Assignment 1 for WEB 101 subject at university.
+Uploading to Github mainly to learn how git works :) 
+
+Simple shopping cart:
+-index - nothing special
+- products -> items to buy, with some javasript checking
+-> cart.cgi -> python cgi, javascript checking, constructs shopping cart based on the POST from the products page.

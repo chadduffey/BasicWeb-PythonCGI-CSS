@@ -25,7 +25,7 @@
         		<h2>What can we do for you today?</h2>
         		<br/>
         		<br/>
-        		<form action = "/cgi-pub/cduffe02/cart.cgi" method="post" name="products">
+        		<form action = "/cgi-pub/cduffe02/cart.cgi" onsubmit="return validateForm()" method="post">
         		<table class="center" summary="ItemsForSale">
 	        		<tr>
 	        			<th>Item</th>
@@ -79,7 +79,7 @@
 	 				</tr>
  				</table>
  				<p>
- 					<input type = "submit" value = "Submit Order"/>
+ 					<input type = "submit" value = "Submit Order" />
  					<input type = "reset" value = "Clear Order Form"/>
  				</p>
  				</form>

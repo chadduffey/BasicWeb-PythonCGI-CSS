@@ -8,9 +8,21 @@ form = cgi.FieldStorage()
 
 
 # Get data from fields
-qtyNuts     = form["nuts"].value
-qtyBolts    = form["bolts"].value
-qtyWashers  = form["washers"].value
+#make sure nulls dont crash us
+try:
+  qtyNuts     = form["nuts"].value
+except:
+  qtyNuts = 0;
+
+try:
+  qtyBolts    = form["bolts"].value
+except:
+  qtyBolts = 0;
+
+try:
+  qtyWashers  = form["washers"].value
+except:
+  qtyWashers = 0;
 
 #item costs - will move to database in future
 priceNuts    = 0.45 
@@ -33,26 +45,26 @@ tableString = "<p>Nothing has been ordered yet<p/>"
 if costNuts == 0 and costBolts == 0 and costWashers == 0:
   tableString = "<p>Nothing has been ordered yet<p/>"
 else:
-  tableString = "<p>Ordered Items:</p>" 
-  tableString = tableString + '<table class="center" summary="ItemsForSale">'
+  tableString = '<table class="center" summary="ItemsForSale">' + '<caption>Your Order</caption>'
   tableString = tableString + '<tr><th>Item</th><th>Product Code</th><th>Unit Price</th><th>Quantity</th><th>Cost</th></tr>'
   if costBolts > 0:
-    tableString = tableString + '<tr><td><label for="bolts">Bolt</label></td><td><label for="b113">B113</label></td><td>2.15</td><td>%s</td><td>%.2f</td></tr>' % (qtyBolts, costBolts) 
+    tableString = tableString + '<tr><td>Bolt</td><td>B113</td><td>2.15</td><td>%s</td><td>%.2f</td></tr>' % (qtyBolts, costBolts) 
   if costNuts > 0:
-    tableString = tableString + '<tr><td><label for="nuts">Nut</label></td><td><label for="n234">N234</label></td><td>0.45</td><td>%s</td><td>%.2f</td></tr>' % (qtyNuts, costNuts)
+    tableString = tableString + '<tr><td>Nut</td><td>N234</td><td>0.45</td><td>%s</td><td>%.2f</td></tr>' % (qtyNuts, costNuts)
   if costWashers > 0:
-    tableString = tableString + '<tr><td><label for="washers">Washer</label></td><td><label for="w359">W359</label></td><td>0.30</td><td>%s</td><td>%.2f</td></tr>' % (qtyWashers, costWashers)
-  tableString = tableString + '<tr><th><label for="total">Total</label></th><th></th><th></th><th></th><td>%.2f</td></tr>' % (totalOrder)
+    tableString = tableString + '<tr><td>Washer</td><td>W359</td><td>0.30</td><td>%s</td><td>%.2f</td></tr>' % (qtyWashers, costWashers)
+  tableString = tableString + '<tr><th>Total</th><th></th><th></th><th></th><td>%.2f</td></tr>' % (totalOrder)
   tableString = tableString + '</table>'
 
 #insert a gap between the items ordered and the total.
-tableString = tableString + "<br>"
+tableString = tableString + "<br />"
 
 print "Content-type:text/html\r\n\r\n"
 print '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
 print '<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
 print '<head>'
 print '<meta http-equiv="Content-Type" content="text/html" />'
+print '<script type="text/javascript" src="http://csusap.csu.edu.au/~cduffe02/cart.js"></script>'
 print '<link rel="stylesheet" type="text/css" href="http://csusap.csu.edu.au/~cduffe02/theme.css" />'
 print '<title>Nuts R Us</title>'
 print '</head>'
@@ -66,30 +78,30 @@ print '<a href="http://csusap.csu.edu.au/cgi-pub/cduffe02/cart.cgi"> Shopping Ca
 print '</div>'
 print '<div id="content">'
 print '<div id="logo">'
-print '<img src="http://csusap.csu.edu.au/~cduffe02/img/logo.png" alt="MainLogo" width="142" height="142" >'
+print '<img src="http://csusap.csu.edu.au/~cduffe02/img/logo.png" alt="MainLogo" width="142" height="142" />'
 print '</div>'
 print "<h1>Settle your account</h1>"
 print '<h2>...And get your nuts in the post</h2>' 
 print tableString
-print '<form action="">'
+print '<form action="" onsubmit="return validateForm()" >'
 print '<table class="center" summary="CheckOut">'
 print '<tr>'
 print '</tr>'
 print '<tr>'
 print '<th>Name</th>'
-print '<td><input type = "text" id ="name" size="20" /></td>'
+print '<td><input type = "text" name="fullname" id="fullname" size="20" /></td>'
 print '</tr>'
 print '<tr>'
 print '<th>Email</th>'
-print '<td><input type = "text" id ="email" size="20" /></td>'
+print '<td><input type = "text" name="email" id ="email" size="20" /></td>'
 print '</tr>'
 print '<tr>'
 print '<th>Phone</th>'
-print '<td><input type = "text" id ="phone" size="20" /></td>'
+print '<td><input type = "text" id ="phone" name="phone" size="20" /></td>'
 print '</tr>'
 print '<tr>'
 print '<th>Address</th>'
-print '<td><input type = "text" id ="address" size="20" /></td>'
+print '<td><input type = "text" id ="address" name = "address" size="20" /></td>'
 print '</tr>'
 print '</table>'
 print '<p>'

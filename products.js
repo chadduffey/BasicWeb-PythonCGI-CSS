@@ -14,7 +14,7 @@ function init ()
 
 function calcTotal()
 {
-    	var boltNumber		= Number(document.getElementById("bolts").value);
+	  	var boltNumber		= Number(document.getElementById("bolts").value);
     	var nutNumber 		= Number(document.getElementById("nuts").value);
     	var washerNumber 	= Number(document.getElementById("washers").value);
     	
@@ -38,8 +38,19 @@ function calcTotal()
 			document.getElementById('total').value 	= 0;
 			
 		var total = boltCost + nutCost + washerCost;
-		
 		document.getElementById('total').value = total.toFixed(2);
+}
+
+function validateForm()
+{
+	   	var b = document.getElementById("bolts").value;
+    	var n = document.getElementById("nuts").value;
+    	var w = document.getElementById("washers").value;
+	   	if ((isNaN(n)) || (isNaN(b)) || (isNaN(w))) 
+  		{
+    		alert("Oops. Please only use numbers for quantities in your order");
+    		return false;
+  		}	
 }
 
 	

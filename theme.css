@@ -17,13 +17,8 @@ h2 {
 	text-align: center;
 }
 
-#boximages{
+#cartoon {
 	text-align: center;
- 	margin: auto;
- 	padding: 0;
- 	border-width: 1px 1px 1px 1px;
- 	border-color: black;
- 	border-style: solid
 }
 
 #whole_page {

@@ -1,4 +1,4 @@
-Simple shopping cart:
--index      -> nothing special
-- products  -> items to buy, with some javasript checking
-- cart.cgi  -> python cgi, javascript checking, constructs shopping cart based on the POST from the products page.
+This is a simple shopping cart template:
+-index -> nothing special
+-products  -> items to buy, with some javasript checking
+-cart.cgi -> python cgi, javascript checking, constructs shopping cart based on the POST from the products page.
